@@ -921,7 +921,7 @@ class WangRathje2018(BooreThompson2015):
     amplification as described in Wang & Rathje (2018, :cite:`rathje18`).
     """
 
-    NAME = "Wang & Rathje (2018) "
+    NAME = "Wang & Rathje (2018)"
     ABBREV = "WR18"
 
     # Coefficients from Table 2, and paragraph after Equation (8)
