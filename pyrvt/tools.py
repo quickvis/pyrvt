@@ -219,7 +219,7 @@ def operation_psa2fa(src,
                      method='LP99',
                      fixed_spacing=True,
                      verbose=True):
-    """Compute the accel. response spectrum from a Fourier amplitude spectrum.
+    """Compute the accel. response spectrum compatible Fourier amplitude spectrum.
 
     Parameters
     ----------
@@ -301,7 +301,7 @@ def operation_fa2psa(src,
                      method='LP99',
                      fixed_spacing=True,
                      verbose=True):
-    """Compute the Fourier amplitude spectrum from a accel. response spectrum.
+    """Compute the accel. response spectrum from Fourier amplitude spectrum.
 
     Parameters
     ----------
