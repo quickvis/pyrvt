@@ -210,7 +210,7 @@ def calc_compatible_spectra(method, periods, events, damping=0.05):
 
     # Return the frequency from one of the computed motions.
     freqs = results[0][0].freqs
-    return freqs
+    return freqs, crm.fourier_amps
 
 
 def operation_psa2fa(src,
