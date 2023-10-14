@@ -13,6 +13,7 @@ import pathlib
 
 import numpy as np
 import numba
+import sys, os
 
 from scipy.integrate import quad
 from scipy.interpolate import LinearNDInterpolator
@@ -767,9 +768,20 @@ def _make_bt_interpolator(region, ref):
 
     """
 
-    fpath = pathlib.Path(__file__).parent.joinpath(
-        "data", f"{region}_{ref}_trms4osc.pars.gz"
-    )
+    # if getattr(sys, 'frozen', False):
+    #     # fpath = pathlib.Path(__file__).parent.joinpath(
+    #     #     "data", f"{region}_{ref}_trms4osc.pars.gz"
+    #     # )
+    #     fpath = pathlib.Path(__file__).parent.joinpath(
+    #         "data", f"{region}_{ref}_horse.pars.gz"
+    #     )
+    # else:
+    # image = PhotoImage(file="files/bg.png")
+    fpath = pathlib.Path(os.path.join(sys._MEIPASS,"files","pyrvt",f"{region}_{ref}_trms4osc.pars.gz"))
+
+    # fpath = pathlib.Path(__file__).parent.joinpath(
+    #     "data", f"{region}_{ref}_trms4osc.pars.gz"
+    # )
     d = np.rec.fromrecords(
         np.loadtxt(str(fpath), skiprows=4, usecols=range(9)),
         names="mag,dist,c1,c2,c3,c4,c5,c6,c7",
