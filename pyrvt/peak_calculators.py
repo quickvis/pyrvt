@@ -768,7 +768,12 @@ def _make_bt_interpolator(region, ref):
 
     """
 
-    fpath = pathlib.Path(os.path.join(sys._MEIPASS,"files","pyrvt",f"{region}_{ref}_trms4osc.pars.gz"))
+    try:
+        fpath = pathlib.Path(os.path.join(sys._MEIPASS,"files","pyrvt",f"{region}_{ref}_trms4osc.pars.gz"))
+    except:
+        fpath = pathlib.Path(__file__).parent.joinpath(
+            "data", f"{region}_{ref}_trms4osc.pars.gz"
+        )
 
     d = np.rec.fromrecords(
         np.loadtxt(str(fpath), skiprows=4, usecols=range(9)),
